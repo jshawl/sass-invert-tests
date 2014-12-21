@@ -1,0 +1,29 @@
+$color: #ccc;
+
+a{
+  color: invert($color);
+}
+
+$background-color:rgba(dodgerblue, .8);
+$text-color: rgba(black, .8);
+
+// NEW INVERT FUNCTION
+@function invert-pct( $color, $percent: 100% ) {
+	$percent: 100% - $percent;
+	@return mix( $color, invert( $color ), $percent );
+}
+
+.c { // Function
+  /*! ~ */
+  background:invert-pct($background-color, 0%);
+  background:invert($background-color, 0%);
+  /*! ~ */
+  background:invert-pct($background-color, 20%);
+  background:invert($background-color, 20%);
+  /*! ~ */
+  background:invert-pct($background-color, 50%);
+  background:invert($background-color, 50%);
+  /*! ~ */
+  background:invert-pct($background-color, 100%);
+  background:invert($background-color);
+}
