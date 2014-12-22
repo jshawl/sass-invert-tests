@@ -1,0 +1,15 @@
+GIT
+  remote: https://github.com/jshawl/sass.git
+  revision: 3c0e15a3dbf227d3dfc0e8e520aa01db53fcf808
+  branch: invert-percentage
+  specs:
+    sass (4.0.0.alpha)
+
+GEM
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  sass!

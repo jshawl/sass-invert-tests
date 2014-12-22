@@ -1,0 +1,25 @@
+$background-color:rgba(dodgerblue, .8);
+$text-color: rgba(black, .8);
+
+/* Optimized version by dustindowell22 */
+@function invert-pct( $color, $percent: 100%) {
+    $percent: 100% - $percent;
+    @return mix( $color, invert( $color ), $percent );
+}
+
+.c { // Function
+  background:invert-pct($background-color, 0%);
+  background:invert($background-color, 0%);
+
+  background:invert-pct($background-color, 10%);
+  background:invert($background-color, 10%);
+
+  background:invert-pct($background-color, 50%);
+  background:invert($background-color, 50%);
+
+  background:invert-pct($background-color, 80%);
+  background:invert($background-color, 80%);
+
+  background:invert-pct($background-color, 100%);
+  background:invert($background-color, 100%);
+}
