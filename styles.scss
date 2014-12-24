@@ -1,11 +1,4 @@
-$color: #ccc;
-
-a{
-  color: invert($color);
-}
-
-$background-color:rgba(dodgerblue, .8);
-$text-color: rgba(black, .8);
+$background-color:rgb(100, 200, 100);
 
 // NEW INVERT FUNCTION
 @function invert-pct( $color, $percent: 100% ) {
@@ -13,17 +6,24 @@ $text-color: rgba(black, .8);
 	@return mix( $color, invert( $color ), $percent );
 }
 
-.c { // Function
-  /*! ~ */
-  background:invert-pct($background-color, 0%);
-  background:invert($background-color, 0%);
-  /*! ~ */
-  background:invert-pct($background-color, 20%);
-  background:invert($background-color, 20%);
-  /*! ~ */
-  background:invert-pct($background-color, 50%);
-  background:invert($background-color, 50%);
-  /*! ~ */
-  background:invert-pct($background-color, 100%);
-  background:invert($background-color);
+.webkit, .sass, .ruby{
+  float:left;
+  width:33.33%;
+  div{
+    height:20px;
+    background:$background-color;
+  }
 }
+
+@for $i from 0 through 10{
+  .webkit :nth-child( #{$i} ){
+    -webkit-filter: invert( $i * 10% );
+  }
+  .sass :nth-child( #{$i} ){
+    background: invert-pct( $background-color, $i * 10% );
+  }
+  .ruby :nth-child( #{$i} ){
+    background: invert( $background-color, $i * 10% );
+  }
+}
+
