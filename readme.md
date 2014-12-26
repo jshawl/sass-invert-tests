@@ -5,4 +5,4 @@
     $ git clone git@github.com:jshawl/sass-invert-tests.git
     $ cd sass-invert-tests
     $ bundle install
-    $ bundle exec sass styles.scss
+    $ bundle exec sass styles.scss:styles.css
